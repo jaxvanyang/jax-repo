@@ -1,0 +1,32 @@
+# Maintainer: Jax Young <jaxvanyang@gmail.com>
+pkgname=countdown
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Countdown app in terminal"
+arch=(any)
+url="https://github.com/jaxvanyang/countdown"
+license=('MIT')
+depends=(
+	'python-platformdirs'
+	'python-textual'
+)
+makedepends=('python-build' 'python-installer' 'python-wheel' 'python-pdm-backend')
+# checkdepends=('python-pytest')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+b2sums=('4c673445486ddcea29aa523e7d412ac978047b91539da242b59011d1dfa34e96c38796bfd96f75e456f2b25e5b96b86557fdb12f668662be419129034bd8ea45')
+
+build() {
+	cd "$pkgname-$pkgver"
+	python -m build --wheel --no-isolation
+}
+
+# check() {
+# 	cd "$pkgname-$pkgver"
+# 	pytest
+# }
+
+package() {
+	cd "$pkgname-$pkgver"
+	python -m installer --destdir="$pkgdir" dist/*.whl
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
