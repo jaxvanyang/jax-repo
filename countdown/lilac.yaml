@@ -1,0 +1,7 @@
+maintainers:
+- github: jaxvanyang
+
+update_on:
+- source: github
+  github: jaxvanyang/countdown
+  use_latest_release: true

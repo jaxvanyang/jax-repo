@@ -1,0 +1,6 @@
+maintainers:
+- github: jaxvanyang
+
+update_on:
+- source: github
+  github: sxqsfun/fcitx5-sogou-themes
