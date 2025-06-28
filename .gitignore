@@ -1,4 +1,6 @@
 *.gz
+*.log
+*.sig
 *.zst
 .SRCINFO
 
