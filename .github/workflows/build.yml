@@ -1,0 +1,15 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: lilac
+    concurrency:
+      group: lilac
+    steps:
+      - name: Trigger lilac build
+        run: lilac
