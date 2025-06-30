@@ -1,5 +1,7 @@
-maintainers:
-  - github: jaxvanyang
 pre_build: aur_pre_build
 update_on:
   - source: aur
+repo_makedepends:
+  - python-pfzy
+  - python-types-pyyaml
+  - python-xdg-base-dirs
