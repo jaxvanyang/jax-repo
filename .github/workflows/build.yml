@@ -13,3 +13,5 @@ jobs:
     steps:
       - name: Trigger lilac build
         run: lilac
+      - name: Show build result
+        run: tail ~/.lilac/build.log
