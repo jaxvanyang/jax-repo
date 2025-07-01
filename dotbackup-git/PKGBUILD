@@ -1,0 +1,50 @@
+# Maintainer: Jax Young <jaxvanyang@gmail.com>
+
+pkgname=dotbackup-git
+_name="${pkgname%-git}.rs"
+pkgver=r10.ef2c657
+pkgrel=1
+pkgdesc='Dotfile backup utility'
+arch=('x86_64')
+url='https://github.com/jaxvanyang/dotbackup.rs'
+license=('MIT')
+depends=('gcc-libs' 'glibc')
+makedepends=('git' 'cargo')
+provides=("${pkgname%-git}")
+conflicts=("${pkgname%-git}")
+source=("$_name::git+$url")
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "$_name"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+	cd "$_name"
+	export RUSTUP_TOOLCHAIN=stable
+	cargo fetch --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+	cd "$_name"
+	export RUSTUP_TOOLCHAIN=stable
+	export CARGO_TARGET_DIR=target
+	cargo build --frozen --release --all-features
+}
+
+# check() {
+# 	cd "$_name"
+# 	export RUSTUP_TOOLCHAIN=stable
+# 	cargo test --frozen --all-features
+# }
+
+package() {
+	cd "$_name"
+	find target/release \
+		-maxdepth 1 \
+		-executable \
+		-type f \
+		-exec install -Dm0755 -t "$pkgdir/usr/bin/" {} +
+	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
