@@ -1,2 +1,3 @@
 update_on:
-  - github: gsamokovarov/jump
+  - source: github
+    github: gsamokovarov/jump
