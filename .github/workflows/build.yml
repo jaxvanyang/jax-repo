@@ -15,5 +15,7 @@ jobs:
     steps:
       - name: Trigger lilac build
         run: lilac
-      - name: Show build result
+      - name: Print lilac latest logs
+        run: ~/.local/bin/lilac-latest-log
+      - name: Show recent build results
         run: tail ~/.lilac/build.log
