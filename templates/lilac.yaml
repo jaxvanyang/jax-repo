@@ -1,0 +1,15 @@
+# Schema: https://archlinuxcn.github.io/lilac
+# API: https://lilac.readthedocs.io/en/latest/api.html
+# nvchecker: https://nvchecker.readthedocs.io/en/latest/usage.html#configuration-files
+maintainers:
+  - github: jaxvanyang
+pre_build: aur_pre_build
+update_on:
+  - source: aur
+  - source: github
+    github: jaxvanyang/repo
+  - source: manual
+    manual: '0.1'
+  - source: regex
+    url: 'https://github.com/jaxvanyang/repo/raw/refs/heads/master/myde/PKGBUILD'
+    regex: 'pkgver=([\d.]+)\.'
