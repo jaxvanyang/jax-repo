@@ -11,5 +11,5 @@ update_on:
   - source: manual
     manual: '0.1'
   - source: regex
-    url: 'https://github.com/jaxvanyang/repo/raw/refs/heads/master/myde/PKGBUILD'
+    url: 'https://github.com/jaxvanyang/repo/raw/refs/heads/main/myde/PKGBUILD'
     regex: 'pkgver=([\d.]+)\.'

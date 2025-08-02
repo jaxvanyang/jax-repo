@@ -2,5 +2,5 @@ maintainers:
   - github: jaxvanyang
 update_on:
   - source: regex
-    url: 'https://github.com/jaxvanyang/repo/raw/refs/heads/master/myde/PKGBUILD'
+    url: 'https://github.com/jaxvanyang/repo/raw/refs/heads/main/myde/PKGBUILD'
     regex: 'pkgver=([\d.]+)\.'
