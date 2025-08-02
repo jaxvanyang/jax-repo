@@ -1,0 +1,31 @@
+# Maintainer: Jax Young <jaxvanyang@gmail.com>
+pkgname=myde
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="My desktop environment"
+arch=(any)
+url="https://github.com/jaxvanyang/repo/tree/myde"
+license=('Unlicense')
+depends=(
+	cosmic
+	# Chinese input method
+	fcitx5-rime
+	fcitx5-configtool
+	rime-double-pinyin
+	fcitx5-gtk # fix Xwayland
+	# management
+	mission-center
+	alacritty
+	zed
+	google-chrome
+	warp
+	rnote
+	amberol
+	telegram-desktop
+	mihomo-party-bin
+)
+optdepends=(
+	otf-comic-shanns-nerd
+	gdm # fix desktop sleep
+	opentabletdriver-git # fix Wacom on COSMIC
+)
