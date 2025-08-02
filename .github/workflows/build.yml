@@ -19,5 +19,5 @@ jobs:
         run: ~/.local/bin/lilac-latest-log
       - name: Show recent build results
         run: tail ~/.lilac/build.log
-      - name: Is latest build successful
-        run: tail -n 1 ~/.lilac/build.log | grep -q 'successful after'
+      - name: Is there any failed build?
+        run: ~/.local/bin/lilac-result
