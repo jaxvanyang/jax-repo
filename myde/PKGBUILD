@@ -7,7 +7,6 @@ arch=(any)
 url="https://github.com/jaxvanyang/repo/tree/myde"
 license=('Unlicense')
 depends=(
-	cosmic
 	# Chinese input method
 	fcitx5-rime
 	fcitx5-configtool
@@ -24,9 +23,10 @@ depends=(
 	telegram-desktop
 )
 optdepends=(
+	cosmic
+	'gdm: fix COSMIC desktop sleep'
+	'opentabletdriver-git: fix Wacom on COSMIC'
 	otf-comic-shanns-nerd
-	gdm # fix desktop sleep
-	opentabletdriver-git # fix Wacom on COSMIC
 	google-chrome
 	mihomo-party-bin
 )
