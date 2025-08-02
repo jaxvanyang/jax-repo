@@ -3,4 +3,4 @@ maintainers:
 update_on:
   - source: regex
     url: 'https://github.com/jaxvanyang/repo/raw/refs/heads/main/myde/PKGBUILD'
-    regex: 'pkgver=([\d.]+)\.'
+    regex: 'pkgver=([\d.]+)'
