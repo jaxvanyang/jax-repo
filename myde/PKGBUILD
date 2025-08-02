@@ -17,15 +17,16 @@ depends=(
 	mission-center
 	alacritty
 	zed
-	google-chrome
+	firefox
 	warp
 	rnote
 	amberol
 	telegram-desktop
-	mihomo-party-bin
 )
 optdepends=(
 	otf-comic-shanns-nerd
 	gdm # fix desktop sleep
 	opentabletdriver-git # fix Wacom on COSMIC
+	google-chrome
+	mihomo-party-bin
 )
